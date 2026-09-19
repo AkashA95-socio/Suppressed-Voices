@@ -1,0 +1,248 @@
+# Controlled vocabularies for the four-model analysis. Used by both the
+# Python analysis scripts and the agent prompts to ensure consistent
+# tagging across runs.
+
+# ============================================================
+# Herman & Chomsky filters (structural)
+# ============================================================
+hc_filters:
+  - ownership
+  - advertising
+  - sourcing
+  - flak
+  - fear_ideology
+
+# Residual filters that apply to independent media specifically
+residual_filters:
+  - foundation_funding
+  - subscriber_audience_bias
+  - english_audience
+  - urban_skew
+  - delhi_mumbai_centrism
+  - hindutva_secular_binary
+  - ngo_sourcing
+  - elite_informants
+  - platform_virality
+  - foreign_funding              # Al Jazeera
+  - legal_harassment_chill       # post-Wire blocking, post-Zubair arrests
+
+# ============================================================
+# Ellul (civilisational)
+# ============================================================
+ellul_propaganda_type:
+  - POLITICAL
+  - SOCIOLOGICAL
+  - MIXED
+
+ellul_mode:
+  - AGITATION
+  - INTEGRATION
+  - BOTH
+
+ellul_direction:
+  - VERTICAL
+  - HORIZONTAL
+  - BOTH
+
+ellul_rationality:
+  - RATIONAL
+  - IRRATIONAL
+  - MIXED
+
+# Sociological substrates — the way-of-life / habitus a message
+# integrates into or agitates against
+sociological_substrates:
+  - constitutional_liberal
+  - secular_humanist
+  - hindutva_developmentalist
+  - hindutva_cultural_revivalist
+  - dravidian_rationalist
+  - dalit_bahujan
+  - ambedkarite
+  - marxist_subaltern
+  - islamic_modernist
+  - pasmanda_assertion
+  - indigenous_adivasi
+  - environmentalist_degrowth
+  - market_libertarian
+  - crony_corporate
+  - military_nationalist
+  - diaspora_cosmopolitan
+  - regional_linguistic
+  - queer_emancipatory
+  - bollywood_patriotic_romantic
+  - festival_aestheticist
+  - motivational_influencer
+  - family_whatsapp_universe
+
+# ============================================================
+# Jowett & O'Donnell (artifact)
+# ============================================================
+jo_special_techniques:
+  - legal_authority_appeal
+  - named_victim
+  - data_density
+  - screenshot_as_evidence
+  - ironic_juxtaposition
+  - counter_narrative
+  - expose_format
+  - thread_argument
+  - video_evidence
+  - satire
+  - moral_outrage
+  - ingroup_scapegoating
+  - foreign_validation
+  - celebrity_amplification
+  - paywall_bypass
+  - whistleblower_voice
+  - crowdfunded_investigation
+  - state_document_leak
+  - hidden_camera
+
+# ============================================================
+# Cognitive heuristics (receiver)
+# ============================================================
+heuristics:
+  - availability
+  - representativeness
+  - anchoring
+  - affect
+  - authority
+  - source_credibility
+  - bandwagon
+  - fluency
+  - identifiable_victim
+  - scarcity
+  - ingroup_outgroup
+  - confirmation_bias_algorithmic
+  - moral_disgust
+  - hope_appeal
+  - novelty
+
+# ============================================================
+# Domain classification
+# ============================================================
+domains:
+  - ECONOMIC
+  - SOCIAL
+  - POLITICAL
+  - ENVIRONMENTAL
+
+# ============================================================
+# Affected groups (for tagging)
+# ============================================================
+affected_groups:
+  # Caste
+  - dalit
+  - adivasi
+  - obc
+  - mbc
+  - hindu_upper_caste
+  # Religion
+  - muslim_general
+  - pasmanda
+  - ashraf
+  - christian
+  - sikh
+  - buddhist
+  - jain
+  # Region
+  - kashmiri
+  - northeast_general
+  - manipuri
+  - kuki
+  - meitei
+  - naga
+  - mizo
+  - assamese
+  - bengali
+  # Gender / sexuality
+  - women_rural
+  - women_urban_informal
+  - women_formal
+  - hijra_trans
+  - queer
+  - lgbt_general
+  # Class / labour
+  - farmers_small
+  - farmers_large
+  - agri_labour
+  - gig_workers
+  - sanitation_workers
+  - manual_scavengers
+  - factory_workers
+  - construction_workers
+  - domestic_workers
+  - asha_workers
+  - anganwadi_workers
+  # Vulnerable
+  - children
+  - elderly
+  - disabled
+  - mentally_ill
+  - prisoners_undertrial
+  - refugees
+  - undocumented
+  - migrants_internal
+  - migrants_intl
+  # Civic
+  - journalists
+  - lawyers
+  - activists
+  - students
+  - teachers
+  - healthcare_workers
+
+# ============================================================
+# Suppression tier
+# ============================================================
+tiers:
+  - T1   # suppressed in mainstream only
+  - T2   # thin even in independents
+  - T3   # platform-virality filtered
+
+# ============================================================
+# Common mainstream framing phrases — track these; their PRESENCE in
+# independent coverage is itself a finding (frame capture).
+# ============================================================
+mainstream_framings:
+  - "anti-national"
+  - "urban Naxal"
+  - "tukde tukde"
+  - "Pakistan-sponsored"
+  - "foreign hand"
+  - "infiltrators"
+  - "love jihad"
+  - "ghar wapasi"
+  - "encroachment removal"
+  - "encroacher"
+  - "miscreant"
+  - "stone pelter"
+  - "lone wolf"
+  - "naxal sympathiser"
+  - "left-liberal cabal"
+  - "narrative warriors"
+  - "toolkit"
+
+# Common independent-media framings — used for outlet-vocabulary mapping
+independent_framings:
+  - "constitutional values"
+  - "majoritarian"
+  - "dog-whistle"
+  - "due process"
+  - "secular fabric"
+  - "subaltern"
+  - "saffronisation"
+  - "ethnic cleansing"
+  - "carceral state"
+  - "lawfare"
+  - "bulldozer justice"
+  - "hate speech"
+  - "extrajudicial"
+  - "custodial death"
+  - "preventive detention"
+  - "press freedom"
+  - "shrinking civic space"
+  - "minority rights"
+  - "intersectional"
+  - "structural violence"

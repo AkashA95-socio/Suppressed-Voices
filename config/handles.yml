@@ -1,0 +1,298 @@
+# Independent media outlets and journalists to monitor.
+# Priority weights (1-5) influence calibration: higher = more weight in the
+# "what independents are covering" model. Vernacular sources get boosted to
+# correct for the English-language bias of the major outlets.
+#
+# Reasoning column is for the operator (you) — it documents WHY this source
+# is in the calibration set. Useful when re-weighting later.
+
+outlets:
+  # Tier A: established English-language independents
+  - id: thewire
+    name: The Wire
+    priority: 5
+    rss:
+      - https://thewire.in/rss
+    website: https://thewire.in
+    youtube: https://www.youtube.com/@TheWireNews
+    twitter: thewire_in
+    reasoning: |
+      Constitutional-liberal flagship; strong legal-affairs and Kashmir desks.
+      Foundation-funded, evades ad filter. Note: blocked by GoI in May 2025
+      over Rafale story; check site availability before scraping.
+
+  - id: caravan
+    name: The Caravan
+    priority: 5
+    rss:
+      - https://caravanmagazine.in/rss.xml
+    website: https://caravanmagazine.in
+    youtube: https://www.youtube.com/@TheCaravanIndia
+    twitter: caravanmagazine
+    reasoning: |
+      Long-form narrative journalism; deepest sustained reporting on RSS,
+      judiciary, intelligence agencies. Slowest cycle but highest analytical
+      value.
+
+  - id: scroll
+    name: Scroll.in
+    priority: 5
+    rss:
+      - https://scroll.in/feed
+    website: https://scroll.in
+    youtube: https://www.youtube.com/@ScrollIndia
+    twitter: scroll_in
+    reasoning: |
+      Strong on Adivasi displacement, Northeast, migrant labour via Common
+      Ground desk. Cultural-historical inflection.
+
+  - id: newslaundry
+    name: Newslaundry
+    priority: 5
+    rss:
+      - https://www.newslaundry.com/feed
+    website: https://www.newslaundry.com
+    youtube: https://www.youtube.com/@Newslaundry
+    twitter: newslaundry
+    reasoning: |
+      Subscriber-funded; meta-media reflex. Strong recent investigations
+      (Project Electoral Bond co-author, Broken Ballots).
+
+  - id: altnews
+    name: Alt News
+    priority: 4
+    rss:
+      - https://www.altnews.in/feed
+    website: https://www.altnews.in
+    youtube: https://www.youtube.com/@AltNews
+    twitter: AltNews
+    reasoning: |
+      Fact-checking; reactive by design (debunks what trends). Treat as
+      separate genre — high signal on viral disinformation, not a primary
+      source on suppressed narratives.
+
+  - id: article14
+    name: Article 14
+    priority: 5
+    rss:
+      - https://article-14.com/rss
+    website: https://article-14.com
+    twitter: article14live
+    reasoning: |
+      Legal-rights deep dives; UAPA database; custodial death tracking.
+      Fits T1 suppression beautifully — police/NIA-frame breakers.
+
+  # Tier B: vernacular and rural-fieldwork-first
+  - id: pari
+    name: People's Archive of Rural India
+    priority: 5
+    rss:
+      - https://ruralindiaonline.org/en/rss/
+    website: https://ruralindiaonline.org
+    youtube: https://www.youtube.com/@peoplesarchiveofruralindia
+    twitter: PARInetwork
+    reasoning: |
+      Vernacular, agrarian, fieldwork-first. Boosted to priority 5 to
+      compensate for English-language bias of the rest of the corpus.
+      THIS IS WHERE TIER-2 STORIES ACTUALLY LIVE.
+
+  - id: khabarlahariya
+    name: Khabar Lahariya
+    priority: 5
+    rss: []                   # no working RSS as of last check; rely on web + YT
+    website: https://khabarlahariya.org
+    youtube: https://www.youtube.com/@khabarlahariya
+    twitter: KhabarLahariya
+    reasoning: |
+      Bundelkhand, Dalit-women-led. Hindi primary. Critical for vernacular
+      coverage. Most content via YouTube.
+
+  - id: maktoob
+    name: Maktoob Media
+    priority: 5
+    rss:
+      - https://maktoobmedia.com/feed
+    website: https://maktoobmedia.com
+    youtube: https://www.youtube.com/@MaktoobMedia
+    twitter: MaktoobMedia
+    reasoning: |
+      Indian Muslim communities, Kashmir, demolitions. Critical for
+      counter-balancing both mainstream silence and Al Jazeera's pan-Muslim
+      framing.
+
+  - id: thenewsminute
+    name: The News Minute
+    priority: 4
+    rss:
+      - https://www.thenewsminute.com/feed
+    website: https://www.thenewsminute.com
+    twitter: thenewsminute
+    reasoning: |
+      Five South Indian states; corrects Delhi-Mumbai centrism of the
+      English independents.
+
+  # Tier C: thematic specialists
+  - id: indiaspend
+    name: IndiaSpend
+    priority: 4
+    rss:
+      - https://www.indiaspend.com/feed
+    website: https://www.indiaspend.com
+    twitter: IndiaSpend
+    reasoning: |
+      Data journalism on health, labour, public spending. Strong on
+      women-in-supply-chains type stories that fit T2.
+
+  - id: mongabay
+    name: Mongabay India
+    priority: 4
+    rss:
+      - https://india.mongabay.com/feed
+    website: https://india.mongabay.com
+    youtube: https://www.youtube.com/@MongabayIndia
+    twitter: MongabayIndia
+    reasoning: |
+      Environment, biodiversity, Adivasi displacement. Critical for
+      climate-vulnerability work.
+
+  - id: behanbox
+    name: Behanbox
+    priority: 4
+    rss:
+      - https://behanbox.com/feed
+    website: https://behanbox.com
+    twitter: behanbox
+    reasoning: |
+      Gender-focused investigation. Crucial for gender-climate-caste
+      intersection mapping.
+
+  - id: landconflict
+    name: Land Conflict Watch
+    priority: 4
+    rss: []
+    website: https://www.landconflictwatch.org
+    twitter: LandConflictIN
+    reasoning: |
+      Land dispossession database. Mostly tabular; treat as data source
+      not narrative source.
+
+  - id: reporters_collective
+    name: The Reporters' Collective
+    priority: 4
+    rss:
+      - https://www.reporters-collective.in/feed
+    website: https://www.reporters-collective.in
+    twitter: reporters_co
+    reasoning: |
+      Investigative co-op (electoral bonds, BJP funding in Assam).
+
+  # Tier D: international with India coverage
+  - id: aljazeera
+    name: Al Jazeera English (India)
+    priority: 3
+    rss:
+      - https://www.aljazeera.com/xml/rss/all.xml
+    website: https://www.aljazeera.com/where/india
+    youtube: https://www.youtube.com/@aljazeeraenglish
+    twitter: AJEnglish
+    reasoning: |
+      Outsider perspective; not subject to Indian ad/sourcing pressure.
+      But: Qatari sovereign ownership = Filter 1 active on Qatar/Gulf
+      labour topics. Lower priority because of frame-narrowing tendency
+      on Indian Muslim issues (Pasmanda invisibility, intra-Muslim caste
+      politics under-covered).
+
+  - id: bbc
+    name: BBC News (India)
+    priority: 3
+    rss:
+      - https://feeds.bbci.co.uk/news/world/asia/india/rss.xml
+    website: https://www.bbc.com/news/world/asia/india
+    youtube: https://www.youtube.com/@BBCNewsIndia
+    twitter: BBCIndia
+    reasoning: |
+      Outsider perspective with real reporting capacity (unlike wire-only
+      outlets, produces original long-form India coverage). But not immune
+      to Filter 1/4 dynamics here: Income Tax Dept "survey" of BBC's Delhi/
+      Mumbai offices in Feb 2023, days after "India: The Modi Question"
+      aired, is itself a T1 case study in pressure on foreign press. Treat
+      coverage post-2023 as a useful signal of self-censorship drift, not
+      just a clean baseline.
+
+  - id: reuters
+    name: Reuters (India)
+    priority: 3
+    rss: []                   # Reuters discontinued public RSS (~2020); use web + search
+    website: https://www.reuters.com/world/india/
+    youtube: https://www.youtube.com/@Reuters
+    twitter: Reuters
+    reasoning: |
+      Wire service, not narrative journalism — thin per-item depth but
+      useful as a neutral, high-volume international baseline for framing
+      comparison (what gets a brief wire mention vs. what independents
+      treat as a ground report). Thomson Reuters ownership concentration
+      is itself a Filter-1 talking point worth noting, not just applying.
+      No working RSS; rely on tools/ingest_web.py --search or --from-stdin.
+
+# Individual journalists worth tracking by name across outlets and substacks.
+# Often produce strongest work on personal blogs / Substacks / Twitter
+# threads that don't make it to outlet RSS.
+
+journalists:
+  - name: Neha Dixit
+    twitter: nehadixit123
+    beats: [extrajudicial_killings, gender, custodial_violence]
+
+  - name: Sukanya Shantha
+    twitter: SukanyaShantha
+    beats: [prisons, UAPA, caste]
+
+  - name: Sagar
+    twitter: sagariki
+    beats: [politics, rafale, judicial_appointments]
+
+  - name: Dhirendra K Jha
+    twitter: dhirendrakjha
+    beats: [RSS, hindutva_history]
+
+  - name: Hartosh Singh Bal
+    twitter: HartoshSinghBal
+    beats: [politics, judiciary, security_state]
+
+  - name: Rana Ayyub
+    twitter: RanaAyyub
+    beats: [muslim_communities, hate_crime]
+    # note: substantive engagement filter — heavy reach but also heavy IT-cell
+    # counterpropaganda; useful Phase-2 case study
+
+  - name: Arfa Khanum Sherwani
+    twitter: khanumarfa
+    beats: [politics, muslim_communities, kashmir]
+
+  - name: Faye D'Souza
+    twitter: fayedsouza
+    beats: [media_criticism, business]
+
+  - name: Ravish Kumar
+    youtube: https://www.youtube.com/@ravishkumar.official
+    beats: [media_criticism, hindi_belt, rural]
+    # primary platform is YouTube post-NDTV
+
+  - name: Rohini Mohan
+    twitter: rohini_mohan
+    beats: [citizenship, NRC, manipur]
+
+  - name: Rokibuz Zaman
+    twitter: ZamanRokibuz
+    beats: [assam, citizenship, pushback]
+    # Scroll's reporter on Assam-Bangladesh pushbacks; T1 evidence source
+
+  - name: Nidhi Suresh
+    twitter: NidhiSuresh_
+    beats: [gender, religious_institutions]
+
+# Output configuration
+output:
+  raw_dir: data/raw
+  db_path: data/corpus.db
+  default_window_days: 30

@@ -1,0 +1,165 @@
+# Mainstream media outlets used as the comparison baseline.
+# These represent the corporate-political nexus that Herman & Chomsky's
+# original Propaganda Model was built to describe — heavy government ad
+# revenue, conglomerate ownership, sourcing dominated by PIB and ANI,
+# unifying "anti-national / urban Naxal / Pakistan-hand" fear ideology.
+#
+# We ingest these to MEASURE what mainstream covers and how it frames
+# things. The comparison against independents IS the suppression model.
+
+outlets:
+  # Print legacy / English
+  - id: timesofindia
+    name: Times of India
+    priority: 5
+    rss:
+      - https://timesofindia.indiatimes.com/rssfeedstopstories.cms
+      - https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms   # India
+    website: https://timesofindia.indiatimes.com
+    twitter: timesofindia
+    ownership: Bennett, Coleman & Co (Times Group)
+    reasoning: |
+      Largest English daily by circulation. Heavy on access-journalism;
+      sourcing dominated by official briefings. Useful as the floor of
+      what "respectable" mainstream covers.
+
+  - id: hindustantimes
+    name: Hindustan Times
+    priority: 5
+    rss:
+      - https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml
+    website: https://www.hindustantimes.com
+    twitter: htTweets
+    ownership: HT Media (KK Birla family)
+    reasoning: |
+      Editorial line shifted significantly post-2017 toward government
+      alignment. Useful baseline for ownership-filter mapping.
+
+  - id: indianexpress
+    name: The Indian Express
+    priority: 5
+    rss:
+      - https://indianexpress.com/section/india/feed/
+    website: https://indianexpress.com
+    twitter: IndianExpress
+    ownership: Express Publications (Goenka family)
+    reasoning: |
+      More adversarial than TOI/HT but still mainstream. Useful middle
+      ground; flags where mainstream HAS to cover something due to
+      institutional pressure but frames it conservatively.
+
+  - id: thehindu
+    name: The Hindu
+    priority: 4
+    rss:
+      - https://www.thehindu.com/news/national/feeder/default.rss
+    website: https://www.thehindu.com
+    twitter: the_hindu
+    ownership: Kasturi & Sons
+    reasoning: |
+      Less market-aligned than the others; classical liberal but
+      institutionally cautious. Worth tracking for divergences from
+      ToI/HT framing.
+
+  # TV English
+  - id: ndtv
+    name: NDTV
+    priority: 5
+    rss:
+      - https://feeds.feedburner.com/ndtvnews-top-stories
+    website: https://www.ndtv.com
+    youtube: https://www.youtube.com/@ndtv
+    twitter: ndtv
+    ownership: Adani Group (since Dec 2022)
+    reasoning: |
+      Post-Adani acquisition this is critical to track — the test case
+      for whether ownership change visibly shifts editorial output.
+      Compare pre-2022 archives if possible.
+
+  - id: republic
+    name: Republic TV
+    priority: 4
+    website: https://www.republicworld.com
+    youtube: https://www.youtube.com/@RepublicWorld
+    twitter: republic
+    ownership: ARG Outlier Media
+    reasoning: |
+      Strongest agitation-propaganda format on Indian English TV.
+      Useful as ceiling case for fear-ideology filter.
+
+  - id: timesnow
+    name: Times Now
+    priority: 4
+    website: https://www.timesnownews.com
+    youtube: https://www.youtube.com/@TimesNow
+    twitter: TimesNow
+    ownership: Times Network
+    reasoning: |
+      Similar profile to Republic. Track for headline framing.
+
+  - id: indiatoday
+    name: India Today
+    priority: 4
+    rss:
+      - https://www.indiatoday.in/rss/1206578
+    website: https://www.indiatoday.in
+    youtube: https://www.youtube.com/@IndiaToday
+    twitter: IndiaToday
+    ownership: TV Today Network (Living Media)
+    reasoning: |
+      Mid-position; both ground reporting and prime-time agitation.
+
+  # TV Hindi (high reach)
+  - id: aajtak
+    name: Aaj Tak
+    priority: 4
+    youtube: https://www.youtube.com/@aajtak
+    twitter: aajtak
+    ownership: TV Today Network
+    reasoning: |
+      Largest Hindi news YouTube channel. Critical for tracking what
+      mainstream Hindi-belt audiences actually see.
+
+  - id: zeenews
+    name: Zee News
+    priority: 4
+    rss:
+      - https://zeenews.india.com/rss/india-national-news.xml
+    website: https://zeenews.india.com
+    youtube: https://www.youtube.com/@ZeeNews
+    twitter: ZeeNews
+    ownership: Essel Group / Zee Media
+    reasoning: |
+      Heavily aligned with government narrative. Reliable signal of
+      official frame.
+
+  # Wire service (sourcing filter case study)
+  - id: ani
+    name: ANI
+    priority: 3
+    twitter: ANI
+    reasoning: |
+      Wire service used by most mainstream outlets. NOT a primary news
+      source for our purposes — but tracking ANI helps identify when
+      mainstream coverage is downstream of a single sourcing chain
+      (Filter 3 in action).
+
+  # Government direct
+  - id: pib
+    name: Press Information Bureau
+    priority: 3
+    rss:
+      - https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3
+    website: https://pib.gov.in
+    twitter: PIB_India
+    reasoning: |
+      Government's own communications. Primary source on what the
+      official frame IS for any given event. Compare-against, not
+      treat-as-news.
+
+# Output configuration mirrors handles.yml so the same ingestion scripts
+# can be pointed at either file
+output:
+  raw_dir: data/raw
+  db_path: data/corpus.db
+  default_window_days: 30
