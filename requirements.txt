@@ -1,0 +1,25 @@
+# suppressed-voices dependencies
+# Install: pip install -r requirements.txt
+
+# Core ingestion
+feedparser>=6.0.10            # RSS parsing
+trafilatura>=1.6.0            # web article extraction
+PyYAML>=6.0                   # config files
+requests>=2.28.0              # HTTP
+python-dotenv>=1.0.0          # load API keys from a local .env file
+
+# YouTube
+yt-dlp>=2024.1.0              # channel listings, video metadata
+youtube-transcript-api>=0.6.0 # transcripts (English + best-effort hi/bn/ta)
+
+# Social (best-effort, optional)
+instaloader>=4.10             # public Instagram profiles only
+
+# LLM backends (for automated pipeline) — install whichever you use
+google-genai>=1.0.0            # Gemini (pip install google-genai)
+openai>=1.0.0                  # DeepSeek + OpenAI — both use this SDK (pip install openai)
+
+# Optional: web search for --web-search flag in pipeline.py
+# duckduckgo-search>=6.0        # uncomment to enable auto web-search step
+
+# Stdlib-only modules (no install needed): sqlite3, argparse, pathlib, json, datetime, re, hashlib, collections

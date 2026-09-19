@@ -1,0 +1,36 @@
+# --- secrets ---
+.env
+.env.*
+!.env.example
+
+# --- python ---
+.venv/
+.venv*/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# --- editor / tooling ---
+.claude/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- data: scraped corpora stay local (copyright + size) ---
+data/corpus.db
+data/*.db
+data/*.db-journal
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- generated outputs stay local by default; curated examples go in examples/ ---
+outputs/*
+!outputs/briefs/
+outputs/briefs/*
+!outputs/briefs/.gitkeep
